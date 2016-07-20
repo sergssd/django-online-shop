@@ -14,12 +14,13 @@
     <div class="col-sm-8">
       <h1>{{ product.name }}</h1>
       <h2><a href="{{ product.category.get_absolute_url }}">{{ product.category }}</a></h2>
-      <p class="price">
-        {{ product.price }} руб.
-      </p>
-      <span>
-        {{ product.description | linebreaks}}
-      </span>
+      <p class="price">{{ product.price }} руб.</p>
+      <form action="{% url "cart:CartAdd" product.id %}" method="post" class="add">
+        {{ cart_product_form }}
+        {% csrf_token %}
+        <input type="submit" value="Добавить в корзину">
+      </form>
+      <span>{{ product.description | linebreaks}}</span>
     </div>
   </div>
 {% endblock %}
