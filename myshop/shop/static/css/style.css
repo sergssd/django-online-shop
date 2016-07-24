@@ -91,3 +91,17 @@ thead{
 .btn-light{
   background: #808080;
 }
+.order-info h2{
+  margin-bottom: 20px;
+}
+.order-form{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.order-form label{
+  display: block;
+}
+.order-form input{
+  width: 100%;
+  padding: 5px 10px;
+}
