@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#Оплата PayPal!/usr/bin/env python
 import os
 import sys
 
