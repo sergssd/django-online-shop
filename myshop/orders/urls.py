@@ -3,5 +3,6 @@ from . import views
 
 
 urlpatterns = [
-    url(r'^create/$', views.OrderCreate, name='OrderCreate')
+    url(r'^create/$', views.OrderCreate, name='OrderCreate'),
+    url(r'^admin/order/(?P<order_id>\d+)/$', views.AdminOrderDetail, name='AdminOrderDetail')
 ]

@@ -8,3 +8,6 @@
 * Четвертый урок: [Ссылка](http://dikiigrigorii.ru/articles/get/2016/07/20/internet-magazin-na-django-korzina-polzovatelya-chast-4/)
 * Пятый урок: [Ссылка](http://dikiigrigorii.ru/articles/get/2016/07/22/internet-magazin-na-django-korzina-polzovatelya-chast-5/)
 * Шестой урок: [Ссылка](http://dikiigrigorii.ru/articles/get/2016/07/24/internet-magazin-na-django-stranica-zakazov-chast-6/)
+* Седьмой урок: [Ссылка](http://dikiigrigorii.ru/articles/get/2016/07/27/internet-magazin-na-django-celery-chast-7/)
+* Восьмой урок: [Ссылка](http://dikiigrigorii.ru/articles/get/2016/07/29/internet-magazin-na-django-integraciya-paypal-chast-8/)
+
