@@ -11,6 +11,13 @@ def OrderDetail(obj):
     return format_html('<a href="{}">Посмотреть</a>'.format(
         reverse('orders:AdminOrderDetail', args=[obj.id])
     ))
+OrderDetail.short_description = 'Инфо'
+
+def OrderPDF(obj):
+    return format_html('<a href="{}">PDF</a>'.format(
+        reverse('orders:AdminOrderPDF', args=[obj.id])
+    ))
+OrderPDF.short_description = 'В PDF'
 
 def ExportToCSV(modeladmin, request, queryset):
     opts = modeladmin.model._meta
@@ -41,9 +48,8 @@ class OrderItemInline(admin.TabularInline):
 
 
 class OrderAdmin(admin.ModelAdmin):
-    list_display = ['id', 'first_name', 'last_name', 'email', 'address',
-                    'postal_code', 'city', 'paid', 'created', 'updated',
-                    OrderDetail]
+    list_display = ['id', 'first_name', 'last_name', 'address','paid', 'created',
+                    OrderDetail, OrderPDF]
     list_filter = ['paid', 'created', 'updated']
     inlines = [OrderItemInline]
     actions = [ExportToCSV]
