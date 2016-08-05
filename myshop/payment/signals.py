@@ -25,10 +25,11 @@ def PaymentNotification(sender, **kwargs):
         # Генерация PDF
         html = render_to_string('orders/order/pdf.html', {'order': order})
         out = BytesIO()
-        weasyprint.HTML(string=html).write_pdf(out,
-        stylesheets=[weasyprint.CSS(settings.STATIC_ROOT + 'css/bootstrap.min.css')])
+        stylesheets=[weasyprint.CSS(settings.STATIC_ROOT + 'css/bootstrap.min.css')]
+        weasyprint.HTML(string=html).write_pdf(out, stylesheets=stylesheets)
+
         # Прикрепляем pdf
-        email.attach(filename='order_{}.pdf'.format(order.id), content=None, mimetype=None)
+        email.attach('order_{}.pdf'.format(order.id), out.getvalue(), 'application/pdf')
         email.send()
 
     valid_ipn_received.connect(PaymentNotification)
